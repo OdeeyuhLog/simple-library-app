@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Poppins:wght@300&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  height: 100%;
+}
+
+.header {
+  background-color: powderblue;
+  padding: 10px 30px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  -webkit-box-shadow: 0px 5px 11px -1px rgba(0, 0, 0, 0.32);
+  -moz-box-shadow: 0px 5px 11px -1px rgba(0, 0, 0, 0.32);
+  box-shadow: 0px 5px 11px -1px rgba(0, 0, 0, 0.32);
+  position: relative;
+  z-index: 2;
+}
+
+.header img {
+  height: 2em;
+  width: 2em;
+}
+
+.add-book {
+  width: 200px;
+  justify-self: end;
+  padding: 10px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.add-book span {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+}
+
+.add-book:hover {
+  background-color: #354259;
+  color: white;
+}
+
+.add-book:hover img {
+  filter: invert(100%) sepia(76%) saturate(638%) hue-rotate(197deg)
+    brightness(107%) contrast(109%);
+}
+
+.title {
+  display: flex;
+  gap: 10px;
+  text-transform: uppercase;
+  align-items: center;
+  color: #354259;
+  font-family: 'Poppins', sans-serif;
+}
+
+.main {
+  background-color: white;
+}
