@@ -21,7 +21,7 @@ body {
   background-color: powderblue;
   padding: 10px 30px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   -webkit-box-shadow: 0px 5px 11px -1px rgba(0, 0, 0, 0.32);
   -moz-box-shadow: 0px 5px 11px -1px rgba(0, 0, 0, 0.32);
@@ -37,7 +37,7 @@ body {
 
 .add-book {
   width: 200px;
-  justify-self: end;
+  justify-self: center;
   padding: 10px;
   border: none;
   font-family: 'Poppins', sans-serif;
@@ -45,7 +45,7 @@ body {
   border-radius: 30px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s ease-in;
+  transition: 0.3s linear;
 }
 
 .add-book span {
