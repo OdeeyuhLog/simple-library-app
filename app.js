@@ -28,7 +28,14 @@ addBook();
 const openModal = document.querySelector('.add-book');
 const modalform = document.querySelector('.modal');
 const overlay = document.querySelector('.shadow');
+const closeModal = document.querySelector('#close-modal');
+// Open modal
 openModal.onclick = function () {
   modalform.style.display = 'flex';
   overlay.style.display = 'block';
+};
+// Close modal
+closeModal.onclick = function () {
+  modalform.style.display = 'none';
+  overlay.style.display = 'none';
 };
