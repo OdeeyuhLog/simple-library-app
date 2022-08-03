@@ -26,9 +26,9 @@ addBook();
 
 // Modal open and close functionality
 const openModal = document.querySelector('.add-book');
-const modal = document.querySelector('.modal');
+const modalform = document.querySelector('.modal');
 const overlay = document.querySelector('.shadow');
 openModal.onclick = function () {
-  modal.style.display = 'flex';
+  modalform.style.display = 'flex';
   overlay.style.display = 'block';
 };
