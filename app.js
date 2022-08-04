@@ -32,6 +32,13 @@ function readStatus(checkBox) {
   }
 }
 
+function resetInput() {
+  title.value = '';
+  author.value = '';
+  pages.value = '';
+  document.getElementById('checkbox').checked = false;
+}
+
 // Modal open and close functionality
 const openModal = document.querySelector('.add-book');
 const modalform = document.querySelector('.modal');
