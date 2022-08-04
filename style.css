@@ -150,7 +150,7 @@ input[type='number'] {
 }
 
 /* SUBMIT BUTTON IN FORM(ADD BOOK) */
-input[type='submit'] {
+input[type='button'] {
   width: 40%;
   height: 50px;
   align-self: center;
@@ -165,7 +165,7 @@ input[type='submit'] {
   outline: 0px solid white;
 }
 
-input[type='submit']:hover {
+input[type='button']:hover {
   outline: 7px solid rgb(92, 248, 92);
 }
 
