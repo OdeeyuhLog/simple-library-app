@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/4134a85b77.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
   </head>
   <body>
@@ -29,7 +33,7 @@
             id="page-count"
             placeholder="How many pages?"
           />
-          <label for="">Have you read it?</label>
+          <label for="checkbox">Have you read it?</label>
           <label class="switch" for="checkbox">
             <input type="checkbox" id="checkbox" />
             <div class="slider round"></div>
@@ -42,14 +46,24 @@
           <img src="assets/bookmark-box-multiple-outline.svg" alt="" />
           <h3>Library App</h3>
         </div>
-        <button class="add-book">
+        <button class="add-bookbtn">
           <span
             ><img src="assets/book-plus-outline.svg" alt="" srcset="" />Add a
             book</span
           >
         </button>
       </div>
-      <div class="main"></div>
+      <div class="main">
+        <div class="card">
+          <h2 class="card-title">Noli Me Tangere</h2>
+          <h3 class="author-name">Jose Rizal</h3>
+          <p class="page-numbers">54 PAGES</p>
+          <div class="read-status">
+            <label for="card-status">READ?</label>
+            <input type="checkbox" name="" id="check-status" />
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
