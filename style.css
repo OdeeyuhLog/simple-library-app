@@ -107,6 +107,7 @@ body {
   font-family: 'Sora', sans-serif;
   border-top: 30px solid #354259;
   color: #354259;
+  position: relative;
 }
 
 .card > *:not(:last-child) {
@@ -167,6 +168,26 @@ body {
 #check-status:checked:after {
   display: flex;
 }
+
+#delete-button {
+  height: 1.5rem;
+  width: 1.5rem;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  border-bottom: 0;
+  padding-bottom: 0;
+  cursor: pointer;
+  transition: 0.5s;
+  filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(137deg)
+    brightness(104%) contrast(104%);
+}
+
+#delete-button:hover {
+  filter: invert(11%) sepia(97%) saturate(7351%) hue-rotate(3deg)
+    brightness(96%) contrast(114%);
+}
+
 /*  */
 /* MODAL DESIGN */
 /*  */

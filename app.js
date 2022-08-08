@@ -20,8 +20,11 @@ function bookInfo(title, author, pages, wasRead = false) {
 addBookBtn.onclick = function () {
   readStatus(document.getElementById('checkbox').checked);
   allBooks.push(new bookInfo(title.value, author.value, pages.value, isRead));
+  modalform.style.display = 'none';
+  overlay.style.display = 'none';
   resetInput();
   createCards();
+  removeBooks();
 };
 
 function readStatus(checkBox) {
@@ -37,13 +40,14 @@ function resetInput() {
   author.value = '';
   pages.value = '';
   document.getElementById('checkbox').checked = false;
-  bookContainer.innerHTML = '';
 }
 
 // Create the card that contains that book information
 const bookContainer = document.querySelector('.main');
 
 function createCards() {
+  let cardNum = 0;
+  bookContainer.innerHTML = '';
   allBooks.forEach((book) => {
     // Create the card div
     const card = document.createElement('div');
@@ -54,6 +58,12 @@ function createCards() {
     card_title.classList.add('card-title');
     card_title.textContent = book.title;
     card.appendChild(card_title);
+
+    // Create delete button
+    const deleteBtn = document.createElement('img');
+    deleteBtn.setAttribute('src', 'assets/delete.svg');
+    deleteBtn.setAttribute('id', 'delete-button');
+    card.appendChild(deleteBtn);
 
     // Show author of the book
     const author_name = document.createElement('h3');
@@ -83,8 +93,21 @@ function createCards() {
     div.appendChild(readCheck);
     card.appendChild(div);
 
+    deleteBtn.setAttribute('data-index', cardNum++);
     // Append the card ultimately
     bookContainer.appendChild(card);
+    removeBooks();
+  });
+}
+
+// Remove a book from an array;
+function removeBooks() {
+  const allDelete = document.querySelectorAll('#delete-button');
+  allDelete.forEach((deleteBtn) => {
+    deleteBtn.onclick = function () {
+      allBooks.splice(deleteBtn.dataset.index, 1);
+      createCards();
+    };
   });
 }
 
