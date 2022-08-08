@@ -15,6 +15,9 @@ function bookInfo(title, author, pages, wasRead = false) {
   this.author = author;
   this.pageCount = pages;
   this.isRead = wasRead;
+  this.changeStatus = function () {
+    isRead === true ? (isRead = false) : (isRead = true);
+  };
 }
 
 addBookBtn.onclick = function () {
@@ -52,6 +55,7 @@ function createCards() {
     // Create the card div
     const card = document.createElement('div');
     card.classList.add('card');
+    card.setAttribute('data-cardnum', cardNum++);
 
     // Create the book title
     const card_title = document.createElement('h2');
@@ -93,7 +97,6 @@ function createCards() {
     div.appendChild(readCheck);
     card.appendChild(div);
 
-    deleteBtn.setAttribute('data-index', cardNum++);
     // Append the card ultimately
     bookContainer.appendChild(card);
     removeBooks();
@@ -105,7 +108,8 @@ function removeBooks() {
   const allDelete = document.querySelectorAll('#delete-button');
   allDelete.forEach((deleteBtn) => {
     deleteBtn.onclick = function () {
-      allBooks.splice(deleteBtn.dataset.index, 1);
+      let parent = deleteBtn.parentElement;
+      allBooks.splice(parent.dataset.cardnum, 1);
       createCards();
     };
   });
