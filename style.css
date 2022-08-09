@@ -15,7 +15,7 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-rows: 90px 1fr;
+  grid-template-rows: 90px 1fr 30px;
   height: 100%;
 }
 
@@ -250,7 +250,7 @@ input[type='number'] {
 }
 
 /* SUBMIT BUTTON IN FORM(ADD BOOK) */
-input[type='button'] {
+input[type='submit'] {
   width: 40%;
   height: 50px;
   align-self: center;
@@ -265,7 +265,7 @@ input[type='button'] {
   outline: 0px solid white;
 }
 
-input[type='button']:hover {
+input[type='submit']:hover {
   outline: 7px solid rgb(92, 248, 92);
 }
 
@@ -342,4 +342,28 @@ input:checked + .slider:before {
 #close-modal:hover {
   border: 3px solid rgb(255, 64, 64);
   border-radius: 30px;
+}
+
+/* Add footer */
+footer {
+  background-color: #354259;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Sora', sans-serif;
+  padding: 10px;
+  color: white;
+  gap: 5px;
+  text-decoration: none;
+}
+
+footer img {
+  height: 1em;
+  width: 1em;
+  filter: invert(100%) sepia(76%) saturate(638%) hue-rotate(197deg)
+    brightness(107%) contrast(109%);
+}
+
+footer p {
+  font-size: 15px;
 }

@@ -24,7 +24,12 @@ function bookInfo(title, author, pages, wasRead = false) {
   };
 }
 
-addBookBtn.onclick = function () {
+const form = document.querySelector('form');
+
+addBookBtn.onclick = function () {};
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
   readStatus(document.getElementById('checkbox').checked);
   allBooks.push(new bookInfo(title.value, author.value, pages.value, isRead));
   modalform.style.display = 'none';
@@ -33,7 +38,7 @@ addBookBtn.onclick = function () {
   createCards();
   removeBooks();
   changeReadStatus();
-};
+});
 
 function readStatus(checkBox) {
   if (checkBox) {

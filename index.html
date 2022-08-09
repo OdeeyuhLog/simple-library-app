@@ -22,23 +22,26 @@
         </div>
         <form action="" method="get">
           <input
+          required
             type="text"
             name="book_title"
             id="book-title"
             placeholder="Title of the Book "
-          /><input type="text" name="" id="author-name" placeholder="Author" />
+          /><input  type="text" name="" id="author-name" placeholder="Author"  required/>
           <input
+          required
             type="number"
             name=""
             id="page-count"
             placeholder="How many pages?"
+            min="1"
           />
           <label for="checkbox">Have you read it?</label>
           <label class="switch" for="checkbox">
             <input type="checkbox" id="checkbox" />
             <div class="slider round"></div>
           </label>
-          <input type="button" value="+ADD" id="add-book" />
+          <input type="submit" value="+ADD" id="add-book" />
         </form>
       </div>
       <div class="header">
@@ -64,6 +67,10 @@
             <input type="checkbox" name="" id="check-status" />
           </div> -->
         </div>
+        <footer>
+          <span><a href="https://github.com/OdeeyuhLog" target="_blank" rel="noopener noreferrer" ><img src="assets/github.svg" alt="" srcset=""></a></span>
+          <p>Made by OdeeyuhLog</p>
+        </footer>
       </div>
     </div>
   </body>
