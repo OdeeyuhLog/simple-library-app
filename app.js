@@ -16,7 +16,11 @@ function bookInfo(title, author, pages, wasRead = false) {
   this.pageCount = pages;
   this.isRead = wasRead;
   this.changeStatus = function () {
-    isRead === true ? (isRead = false) : (isRead = true);
+    if (this.isRead === true) {
+      this.isRead = false;
+    } else if (this.isRead === false) {
+      this.isRead = true;
+    }
   };
 }
 
@@ -28,6 +32,7 @@ addBookBtn.onclick = function () {
   resetInput();
   createCards();
   removeBooks();
+  changeReadStatus();
 };
 
 function readStatus(checkBox) {
@@ -100,6 +105,7 @@ function createCards() {
     // Append the card ultimately
     bookContainer.appendChild(card);
     removeBooks();
+    changeReadStatus();
   });
 }
 
@@ -111,6 +117,18 @@ function removeBooks() {
       let parent = deleteBtn.parentElement;
       allBooks.splice(parent.dataset.cardnum, 1);
       createCards();
+    };
+  });
+}
+
+// Change the read status of a book dynamically
+function changeReadStatus() {
+  const allCheckbox = document.querySelectorAll('#check-status');
+  allCheckbox.forEach((checkbox) => {
+    checkbox.onclick = function () {
+      let parent = checkbox.parentElement.parentElement;
+      let index = parent.dataset.cardnum;
+      allBooks[index].changeStatus();
     };
   });
 }
