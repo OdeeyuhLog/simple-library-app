@@ -23,20 +23,6 @@ class book {
   }
 }
 
-function bookInfo(title, author, pages, wasRead = false) {
-  this.title = title;
-  this.author = author;
-  this.pageCount = pages;
-  this.isRead = wasRead;
-  this.changeStatus = function () {
-    if (this.isRead === true) {
-      this.isRead = false;
-    } else if (this.isRead === false) {
-      this.isRead = true;
-    }
-  };
-}
-
 const form = document.querySelector('form');
 
 addBookBtn.onclick = function () {};
@@ -44,7 +30,7 @@ addBookBtn.onclick = function () {};
 form.addEventListener('submit', function (event) {
   event.preventDefault();
   readStatus(document.getElementById('checkbox').checked);
-  allBooks.push(new bookInfo(title.value, author.value, pages.value, isRead));
+  allBooks.push(new book(title.value, author.value, pages.value, isRead));
   modalform.style.display = 'none';
   overlay.style.display = 'none';
   resetInput();
@@ -147,6 +133,7 @@ function changeReadStatus() {
       let parent = checkbox.parentElement.parentElement;
       let index = parent.dataset.cardnum;
       allBooks[index].changeStatus();
+      console.log(allBooks);
     };
   });
 }
