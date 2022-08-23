@@ -10,6 +10,19 @@ let title = document.getElementById('book-title'),
 // by the user.
 const addBookBtn = document.getElementById('add-book');
 
+class book {
+  constructor(title, author, pages, wasRead) {
+    this.title = title;
+    this.author = author;
+    this.pageCount = pages;
+    this.isRead = wasRead;
+  }
+
+  changeStatus() {
+    this.isRead === true ? (this.isRead = false) : (this.isRead = true);
+  }
+}
+
 function bookInfo(title, author, pages, wasRead = false) {
   this.title = title;
   this.author = author;
